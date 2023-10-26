@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "libraryBranch")
 public class LibraryBranch {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer Id;
 	private String location;
 	private ArrayList<Book> allBooks;
