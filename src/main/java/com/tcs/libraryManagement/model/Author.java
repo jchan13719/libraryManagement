@@ -1,4 +1,4 @@
-package model;
+package com.tcs.libraryManagement.model;
 
 import java.util.ArrayList;
 

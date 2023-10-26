@@ -1,4 +1,4 @@
-package model;
+package com.tcs.libraryManagement.model;
 
 import java.util.ArrayList;
 
@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "book")
 public class Book {
 	@Id
+	@Column(name = "ISBN")
 	private Integer ISBN;
 	@Column(name = "name")
 	private String name;

@@ -1,10 +1,10 @@
-package dao;
+package com.tcs.libraryManagement.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import model.Book;
+import com.tcs.libraryManagement.model.Book;
 
 public interface BookDao {
 	List<Map<String, Object>> getBooks() throws SQLException;
