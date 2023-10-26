@@ -2,11 +2,12 @@ package dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import model.Book;
 
 public interface BookDao {
-	List<Book> getBooks() throws SQLException;
+	List<Map<String, Object>> getBooks() throws SQLException;
 
 	List<Book> getBook(Integer id) throws SQLException;
 
@@ -15,4 +16,6 @@ public interface BookDao {
 	Integer updateBook(Integer ISBN) throws SQLException;
 
 	Integer deleteBook(Integer ISBN) throws SQLException;
+
+	String testBook() throws SQLException;
 }

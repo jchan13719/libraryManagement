@@ -2,8 +2,10 @@ package repository;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import dao.BookDao;
@@ -11,15 +13,17 @@ import model.Book;
 
 @Repository
 public class BookRepository implements BookDao {
-	private final Connection connection;
+
+	private final JdbcTemplate jdbcTemplate;
 
 	@Autowired
-	public BookRepository(DatabaseConnection connection) {
-		this.connection = connection.getConnection();
+	public BookRepository(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public List<Book> getBooks() {
-		return null;
+	public List<Map<String, Object>> getBooks() throws SQLException {
+		String sql = "SELECT * from Book";
+		return jdbcTemplate.queryForList(sql);
 	}
 
 	@Override
@@ -30,7 +34,8 @@ public class BookRepository implements BookDao {
 
 	@Override
 	public Integer addBook(Book book) throws SQLException {
-		// TODO Auto-generated method stub
+//		String sql = "";
+//		return jdbcTemplate.queryForList(sql);
 		return null;
 	}
 
@@ -44,6 +49,12 @@ public class BookRepository implements BookDao {
 	public Integer deleteBook(Integer ISBN) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String testBook() throws SQLException {
+
+		return "Hello world";
 	}
 
 }
