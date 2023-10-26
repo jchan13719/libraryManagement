@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +15,18 @@ public class Borrower {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer Id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "book")
 	private Book book;
+	@Column(name = "borrowDate")
 	private LocalDateTime borrowDate;
+	@Column(name = "duration")
 	private Integer duration;
+
+	public Borrower() {
+		super();
+	}
 
 	public Integer getId() {
 		return Id;

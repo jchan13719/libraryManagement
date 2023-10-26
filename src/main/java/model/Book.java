@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,10 +12,18 @@ import javax.persistence.Table;
 public class Book {
 	@Id
 	private Integer ISBN;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "author")
 	private String author;
+	@Column(name = "pages")
 	private Integer pages;
+	@Column(name = "genre")
 	private ArrayList<Genre> genre;
+
+	public Book() {
+		super();
+	}
 
 	public int getISBN() {
 		return ISBN;

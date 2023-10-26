@@ -16,14 +16,18 @@ public class Author {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(nullable = false)
+	@Column(name = "name")
 	private String name;
 
-	@Column(nullable = false)
+	@Column(name = "age")
 	private Integer age;
 
-	@Column(nullable = false)
+	@Column(name = "books")
 	private ArrayList<Book> books;
+
+	public Author() {
+		super();
+	}
 
 	public Integer getId() {
 		return id;
